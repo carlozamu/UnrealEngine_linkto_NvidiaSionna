@@ -1,69 +1,68 @@
+# Digital Twin Signal Propagation Simulation Project
 
-# Progetto di Simulazione della Propagazione del Segnale in un Digital Twin
+## Project Description
 
-## Descrizione del progetto
+This project aims to simulate wireless signal propagation in an urban environment using a digital twin, created through the integration of **Unreal Engine 5.3** and **Nvidia Sionna**. The developed software allows modeling, calculating, and visualizing signal coverage in a complex urban scenario.
 
-Questo progetto mira a simulare la propagazione del segnale wireless in un ambiente urbano utilizzando un digital twin, creato attraverso l'integrazione di **Unreal Engine 5.3** e **Nvidia Sionna**. Il software sviluppato consente di modellare, calcolare e visualizzare la copertura del segnale in uno scenario urbano complesso.
+### Technologies Used
+- **Unreal Engine 5.3**: Real-time 3D simulation engine.
+- **Blender 4.1**: Used for creating 3D models of urban buildings.
+- **Nvidia Sionna**: Library for simulating wireless signal propagation.
+- **Python & TensorFlow**: Languages and libraries for automation and simulation data analysis.
 
-### Tecnologie utilizzate
-- **Unreal Engine 5.3**: Motore grafico per la simulazione 3D in tempo reale.
-- **Blender 4.1**: Utilizzato per la creazione dei modelli 3D degli edifici urbani.
-- **Nvidia Sionna**: Libreria per la simulazione della propagazione del segnale wireless.
-- **Python & TensorFlow**: Linguaggi e librerie per l'automazione e l'analisi dei dati della simulazione.
+## Objectives
 
-## Obiettivi
+The objective of the project is to provide a tool that:
+1. Accurately simulates signal propagation in a complex urban environment.
+2. Visualizes signal paths and coverage maps through a realistic digital twin.
+3. Allows comparison between simulated data and real data to validate the model's accuracy.
 
-L'obiettivo del progetto è fornire uno strumento che:
-1. Simuli con precisione la propagazione del segnale in un ambiente urbano complesso.
-2. Visualizzi i percorsi del segnale (paths) e le mappe di copertura (coverage maps) attraverso un digital twin realistico.
-3. Consenta il confronto tra i dati simulati e quelli reali per validare l'accuratezza del modello.
+## Main Features
 
-## Funzionalità principali
+1. **3D Model Creation**: Using **Blender** and **OpenStreetMap** data, a 3D model of the urban area is generated.
+2. **Signal Propagation Simulation**: Thanks to **Nvidia Sionna** and differentiable **ray tracing**, the propagation of the signal between transmitters (TX) and receivers (RX) is simulated.
+3. **Signal Path Visualization**: In **Unreal Engine**, the signal paths are traced and visualized using `Blueprints` that draw debug lines between TX and RX.
+4. **Coverage Map Generation**: A high-resolution coverage map is generated, representing the signal strength in decibels for each point in the urban area.
 
-1. **Creazione del modello 3D**: Utilizzando **Blender** e i dati di **OpenStreetMap**, viene generato un modello 3D dell'area urbana.
-2. **Simulazione della propagazione del segnale**: Grazie a **Nvidia Sionna** e al **ray tracing differenziabile**, viene simulata la propagazione del segnale tra trasmettitori (TX) e ricevitori (RX).
-3. **Visualizzazione del percorso del segnale**: In **Unreal Engine**, i percorsi del segnale vengono tracciati e visualizzati tramite `Blueprints` che disegnano linee di debug tra TX e RX.
-4. **Generazione di mappe di copertura**: Viene generata una mappa di copertura (coverage map) ad alta risoluzione, che rappresenta la potenza del segnale in decibel per ogni punto dell'area urbana.
+## Project Structure
 
-## Struttura del progetto
+The project is divided into four main phases:
+1. **Importing the Urban Model**: Geographical data is imported from OpenStreetMap and converted into 3D models using Blender.
+2. **Propagation Simulation**: Nvidia Sionna is used to calculate the signal paths and generate the coverage map.
+3. **Visualization**: The simulation results are imported into Unreal Engine for interactive visualization.
+4. **Model Validation**: The simulation results are compared with real field data to validate the model.
 
-Il progetto è suddiviso in quattro fasi principali:
-1. **Importazione del modello urbano**: I dati geografici vengono importati da OpenStreetMap e convertiti in modelli 3D utilizzando Blender.
-2. **Simulazione della propagazione**: Viene utilizzato Nvidia Sionna per calcolare i percorsi del segnale e generare la mappa di copertura.
-3. **Visualizzazione**: I risultati della simulazione vengono importati in Unreal Engine per la visualizzazione interattiva.
-4. **Validazione del modello**: I risultati della simulazione vengono confrontati con dati reali raccolti sul campo per validare il modello.
+## How to Run the Project
 
-## Come eseguire il progetto
-
-### Prerequisiti
+### Prerequisites
 - **Unreal Engine 5.3**
 - **Blender 4.1**
 - **Nvidia Sionna**
-- **Python 3.8+** con **TensorFlow**
+- **Python 3.8+** with **TensorFlow**
 
-### Istruzioni
+### Instructions
 
-1. **Importazione dei dati**:
-   - Aprire **Blender** e utilizzare l'add-on `Blosm` per importare i dati da **OpenStreetMap**.
-   - Esportare il modello 3D come file `.obj` e `.xml` per Unreal Engine e Nvidia Sionna rispettivamente.
+1. **Data Import**:
+   - Open **Blender** and use the `Blosm` add-on to import data from **OpenStreetMap**.
+   - Export the 3D model as an `.obj` file and `.xml` for Unreal Engine and Nvidia Sionna respectively.
 
-2. **Simulazione**:
-   - Eseguire lo script Python per avviare Nvidia Sionna e calcolare i percorsi del segnale e la mappa di copertura.
-   - Esportare i risultati in formato CSV e immagine.
+2. **Simulation**:
+   - Run the Python script to launch Nvidia Sionna and calculate the signal paths and coverage map.
+   - Export the results in CSV and image format.
 
-3. **Visualizzazione**:
-   - Importare i dati esportati in **Unreal Engine**.
-   - Utilizzare i `Blueprints` forniti per visualizzare i percorsi del segnale e la mappa di copertura.
+3. **Visualization**:
+   - Import the exported data into **Unreal Engine**.
+   - Use the provided `Blueprints` to visualize the signal paths and coverage map.
 
-## Risultati
+## Results
 
-Il progetto ha permesso di creare un digital twin dettagliato di un ambiente urbano, calcolando percorsi di segnale complessi e generando una mappa di copertura ad alta risoluzione. I risultati sono stati confrontati con dati reali per verificarne la precisione.
+The project has enabled the creation of a detailed digital twin of an urban environment, calculating complex signal paths and generating a high-resolution coverage map. The results were compared with real data to verify accuracy.
 
-## Futuri sviluppi
+## Future Developments
 
-- Miglioramento del modello per includere ostacoli dinamici (ad esempio, veicoli e persone).
-- Integrazione con modelli di machine learning per l'ottimizzazione della rete in tempo reale.
+- Improvement of the model to include dynamic obstacles (e.g., vehicles and people).
+- Integration with machine learning models for real-time network optimization.
 
-## Autori
+## Authors
 
-- **Carlo Zamuner** - Laureando in Ingegneria Informatica, delle Comunicazioni ed Elettronica presso l'Università di Trento.
+- **Carlo Zamuner** - Graduate student in Computer, Communications and Electronics Engineering at the University of Trento.
